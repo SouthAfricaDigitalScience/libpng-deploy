@@ -1,5 +1,5 @@
 #!/bin/bash
-
+. /usr/share/modules/init/bash
 module load ci
 echo "About to make the modules"
 cd $WORKSPACE/$NAME-$VERSION
