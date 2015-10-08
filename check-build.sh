@@ -6,7 +6,7 @@ cd $WORKSPACE/$NAME-$VERSION
 ls
 echo $?
 
-echo "Run Make Check"
+echo "Run Make Check - This is the Test"
 make check
 
 echo "Run make Install"
@@ -42,6 +42,3 @@ cp modules/$VERSION-gcc-$GCC_VERSION $LIBRARIES_MODULES/$NAME/$VERSION-gcc-$VERS
 module avail
 module list
 module load $NAME/$VERSION-gcc-$GCC_VERSION
-# Testing installation
-
-
