@@ -2,7 +2,7 @@
 . /usr/share/modules/init/bash
 module load ci
 echo "About to make the modules"
-cd $WORKSPACE/$NAME-$VERSION
+cd $WORKSPACE/${NAME}-${VERSION}
 ls
 echo $?
 
@@ -22,7 +22,7 @@ proc ModulesHelp { } {
    puts stderr "\tAdds $NAME $VERSION to your environment"
 }
 
-module load gcc/$GCC_VERSION
+module load gcc/${GCC_VERSION}
 
 module-whatis   "$NAME $VERSION."
 setenv       LIBPNG_VERSION       $VERSION
@@ -34,11 +34,11 @@ prepend-path    PATH            $::env(LIBPNG_DIR)/bin
 prepend-path    MANPATH         $::env(LIBPNG_DIR)/man
 prepend-path    LD_LIBRARY_PATH $::env(LIBPNG_DIR)/lib
 MODULE_FILE
-) > modules/$VERSION-gcc-$GCC_VERSION
+) > modules/$VERSION-gcc-${GCC_VERSION}
 mkdir -p $LIBRARIES_MODULES/$NAME
-cp modules/$VERSION-gcc-$GCC_VERSION $LIBRARIES_MODULES/$NAME/$VERSION-gcc-$VERSION
+cp modules/$VERSION-gcc-${GCC_VERSION} $LIBRARIES_MODULES/$NAME/$VERSION-gcc-${GCC_VERSION}
 
 # Testing module
 module avail
 module list
-module load $NAME/$VERSION-gcc-$GCC_VERSION
+module load $NAME/${VERSION}-gcc-${GCC_VERSION}
