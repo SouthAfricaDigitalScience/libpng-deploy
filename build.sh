@@ -1,6 +1,6 @@
 #!/bin/bash -e
 #SOURCE_FILE=$NAME-$VERSION.tar.gz
-. /usr/share/modules/init/bash 
+. /usr/share/modules/init/bash
 # We will build the code from the github repo, but if we want specific versions,
 # a new Jenkins job will be created for the version number and we'll provide
 # the URL to the tarball in the configuration.
@@ -37,7 +37,7 @@ else
   echo "continuing from previous builds, using source at " $SRC_DIR/$SOURCE_FILE
 fi
 
-tar -xvzf $SRC_DIR/$SOURCE_FILE -C $WORKSPACE
+tar -xvz --keep-newer-files -f $SRC_DIR/$SOURCE_FILE -C $WORKSPACE
 cd $WORKSPACE/$NAME-$VERSION
 
 echo "Configuring the build"
