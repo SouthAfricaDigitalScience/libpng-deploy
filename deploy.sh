@@ -1,16 +1,21 @@
 #!/bin/bash -e
+# png deploy script
 . /etc/profile.d/modules
-module load ci
+module add deploy
 module add zlib
-echo "About to make the modules"
-cd $WORKSPACE/${NAME}-${VERSION}/build-${BUILD_NUMBER}
-ls
-echo $?
+echo "SOFT_DIR is"
+echo $SOFT_DIR
+cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
+rm -rf *
+../configure  \
+--with-zlib-prefix=${ZLIB_DIR} \
+--enable-unversioned-links \
+--prefix=${SOFT_DIR} \
+echo "Running the build"
+make all -j2
 
-echo "Run Make Check - This is the Test"
 make check
 
-echo "Run make Install"
 make install
 
 mkdir -p modules
@@ -25,7 +30,7 @@ proc ModulesHelp { } {
 
 module-whatis   "$NAME $VERSION."
 setenv       LIBPNG_VERSION       $VERSION
-setenv       LIBPNG_DIR           /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
+setenv       LIBPNG_DIR           $::env(CVMFS_DIR)/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
 
 prepend-path 	PATH            $::env(LIBPNG_DIR)/bin
 prepend-path    PATH            $::env(LIBPNG_DIR)/include
@@ -35,9 +40,11 @@ prepend-path    LD_LIBRARY_PATH $::env(LIBPNG_DIR)/lib
 MODULE_FILE
 ) > modules/$VERSION
 mkdir -p $LIBRARIES_MODULES/$NAME
-cp modules/${VERSION} ${LIBRARIES_MODULES}/${NAME}/${VERSION}
+cp modules/$VERSION $LIBRARIES_MODULES/$NAME/$VERSION
 
 # Testing module
 module avail
 module list
-module add ${NAME}/${VERSION}
+module add $NAME/${VERSION}
+which libpng16-config
+libpng16-config 
