@@ -1,5 +1,5 @@
 #!/bin/bash -e
-. /etc/profile.d/modules
+. /etc/profile.d/modules.sh
 module load ci
 module add zlib
 echo "About to make the modules"

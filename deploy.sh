@@ -1,6 +1,6 @@
 #!/bin/bash -e
 # png deploy script
-. /etc/profile.d/modules
+. /etc/profile.d/modules.sh
 module add deploy
 module add zlib
 echo "SOFT_DIR is"
@@ -47,4 +47,4 @@ module avail
 module list
 module add $NAME/${VERSION}
 which libpng16-config
-libpng16-config 
+libpng16-config
