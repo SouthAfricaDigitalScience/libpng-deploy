@@ -41,7 +41,7 @@ else
 fi
 
 tar -xvz --keep-newer-files -f ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE}
-cd ${WORKSPACE}/${NAME}-${VERSION}
+cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 mkdir build-${BUILD_NUMBER}
 echo "Configuring the build"
 ../configure  \
