@@ -47,4 +47,4 @@ module avail
 module list
 module add $NAME/${VERSION}
 which libpng16-config
-libpng16-config
+libpng16-config --version
