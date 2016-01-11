@@ -1,5 +1,4 @@
 #!/bin/bash -e
-
 . /etc/profile.d/modules.sh
 # We will build the code from the github repo, but if we want specific versions,
 # a new Jenkins job will be created for the version number and we'll provide
@@ -41,13 +40,13 @@ else
   echo "continuing from previous builds, using source at " ${SRC_DIR}/${SOURCE_FILE}
 fi
 
-tar -xvz --keep-newer-files -f ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE}
+tar -xvzf ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files
 mkdir -p ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 cd  ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 echo "Configuring the build"
 export CFLAGS="-I${ZLIB_DIR}/include"
 export LDFLAGS="-L${ZLIB_DIR}/lib"
-../configure  \
+../configure \
 --with-zlib-prefix=${ZLIB_DIR} \
 --enable-unversioned-links \
 --prefix=${SOFT_DIR} \
