@@ -44,9 +44,11 @@ tar -xvz --keep-newer-files -f ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE}
 mkdir -p ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 cd  ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 echo "Configuring the build"
+export CFLAGS="-I${ZLIB_DIR}/include"
+export LDFLAGS="-L${ZLIB_DIR}/lib"
 ../configure  \
 --with-zlib-prefix=${ZLIB_DIR} \
 --enable-unversioned-links \
 --prefix=${SOFT_DIR} \
 echo "Running the build"
-make all -j2
+make -j2
