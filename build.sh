@@ -48,6 +48,6 @@ export LDFLAGS="-L${ZLIB_DIR}/lib"
 ../configure \
 --with-zlib-prefix=${ZLIB_DIR} \
 --enable-unversioned-links \
---prefix=${SOFT_DIR} \
+--prefix=${SOFT_DIR}
 echo "Running the build"
 make -j2
