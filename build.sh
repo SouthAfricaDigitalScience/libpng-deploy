@@ -9,6 +9,7 @@ SOURCE_REPO="http://download.sourceforge.net/libpng/"
 SOURCE_FILE="${NAME}-${VERSION}.tar.gz"
 
 module add ci
+module add gcc/5.2.1
 module add zlib
 
 echo "REPO_DIR is "
