@@ -6,16 +6,16 @@ module add zlib
 echo "SOFT_DIR is"
 echo $SOFT_DIR
 cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
+export CFLAGS="-I${ZLIB_DIR}/include"
+export LDFLAGS="-L${ZLIB_DIR}/lib"
+export CPPFLAGS="-I${ZLIB_DIR}/include"
 rm -rf *
 ../configure  \
 --with-zlib-prefix=${ZLIB_DIR} \
 --enable-unversioned-links \
---prefix=${SOFT_DIR} \
+--prefix=${SOFT_DIR}
 echo "Running the build"
-make all -j2
-
-make check
-
+make -j2
 make install
 
 mkdir -p modules

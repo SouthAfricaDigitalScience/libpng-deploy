@@ -43,6 +43,7 @@ tar -xvzf ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files
 mkdir -p ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 cd  ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 echo "Configuring the build"
+export CPPFLAGS="-I${ZLIB_DIR}/include"
 export CFLAGS="-I${ZLIB_DIR}/include"
 export LDFLAGS="-L${ZLIB_DIR}/lib"
 ../configure \
