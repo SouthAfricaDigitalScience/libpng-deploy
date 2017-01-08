@@ -25,7 +25,7 @@ proc ModulesHelp { } {
 
 module-whatis   "$NAME $VERSION."
 setenv       LIBPNG_VERSION       $VERSION
-setenv       LIBPNG_DIR           $::env(SOFT_DIR)
+setenv       LIBPNG_DIR          /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
 
 prepend-path 	PATH            $::env(LIBPNG_DIR)/bin
 prepend-path    PATH            $::env(LIBPNG_DIR)/include
