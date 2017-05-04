@@ -21,9 +21,9 @@ module add zlib
 echo "SOFT_DIR is"
 echo $SOFT_DIR
 cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
-export CFLAGS="-I${ZLIB_DIR}/include"
-export LDFLAGS="-L${ZLIB_DIR}/lib"
-export CPPFLAGS="-I${ZLIB_DIR}/include"
+# export CFLAGS="-I${ZLIB_DIR}/include"
+# export LDFLAGS="-L${ZLIB_DIR}/lib"
+# export CPPFLAGS="-I${ZLIB_DIR}/include"
 rm -rf *
 ../configure  \
 --with-zlib-prefix=${ZLIB_DIR} \
