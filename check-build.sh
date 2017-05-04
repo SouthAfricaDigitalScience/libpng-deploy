@@ -16,6 +16,7 @@
 . /etc/profile.d/modules.sh
 module load ci
 module add zlib
+export LD_LIBRARY_PATH="/lib64:$LD_LIBRARY_PATH"
 echo "About to make the modules"
 cd $WORKSPACE/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 ls
@@ -42,8 +43,6 @@ setenv       LIBPNG_VERSION       $VERSION
 setenv       LIBPNG_DIR          /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
 
 prepend-path 	PATH            $::env(LIBPNG_DIR)/bin
-prepend-path    PATH            $::env(LIBPNG_DIR)/include
-prepend-path    PATH            $::env(LIBPNG_DIR)/bin
 prepend-path    MANPATH         $::env(LIBPNG_DIR)/man
 prepend-path    LD_LIBRARY_PATH $::env(LIBPNG_DIR)/lib
 MODULE_FILE

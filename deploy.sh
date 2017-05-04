@@ -15,6 +15,7 @@
 
 # png deploy script
 . /etc/profile.d/modules.sh
+export LD_LIBRARY_PATH="/lib64:$LD_LIBRARY_PATH"
 module add deploy
 module add zlib
 echo "SOFT_DIR is"
@@ -47,8 +48,6 @@ setenv       LIBPNG_VERSION       $VERSION
 setenv       LIBPNG_DIR           $::env(CVMFS_DIR)/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
 
 prepend-path 	PATH            $::env(LIBPNG_DIR)/bin
-prepend-path    PATH            $::env(LIBPNG_DIR)/include
-prepend-path    PATH            $::env(LIBPNG_DIR)/bin
 prepend-path    MANPATH         $::env(LIBPNG_DIR)/man
 prepend-path    LD_LIBRARY_PATH $::env(LIBPNG_DIR)/lib
 MODULE_FILE
