@@ -1,4 +1,6 @@
-[![Build Status](https://ci.sagrid.ac.za/buildStatus/icon?job=libpng-deploy)](https://ci.sagrid.ac.za/job/libpng-deploy/)
+[![Build Status](https://ci.sagrid.ac.za/buildStatus/icon?job=libpng-deploy)](https://ci.sagrid.ac.za/job/libpng-deploy/) [![DOI](https://zenodo.org/badge/43883381.svg)](https://zenodo.org/badge/latestdoi/43883381)
+
+
 # libpng-deploy
 
 Build, test and deploy scripts for [libpng](http://www.libpng.org/pub/png/libpng.html)
@@ -37,4 +39,4 @@ The builds are configured with the following flags :
 
 Cite as :
 
-<!-- waiting for DOI --> 
+Bruce Becker, & Sakhile Masoka. (2017). SouthAfricaDigitalScience/libpng-deploy: CODE-RADE Foundation Release 3 - libpng [Data set]. Zenodo. http://doi.org/10.5281/zenodo.571464
