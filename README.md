@@ -1,15 +1,15 @@
-[![Build Status](https://ci.sagrid.ac.za/buildStatus/icon?job=libpng-deploy)](https://ci.sagrid.ac.za/job/libpng-deploy/) [![DOI](https://zenodo.org/badge/43883381.svg)](https://zenodo.org/badge/latestdoi/43883381)
-
-
 # libpng-deploy
+
+[![Build Status](https://ci.sagrid.ac.za/buildStatus/icon?job=libpng-deploy)](https://ci.sagrid.ac.za/job/libpng-deploy/) [![DOI](https://zenodo.org/badge/43883381.svg)](https://zenodo.org/badge/latestdoi/43883381)
 
 Build, test and deploy scripts for [libpng](http://www.libpng.org/pub/png/libpng.html)
 
-# Versions
+## Versions
 
 Versions built are  :
 
   1. 1.6.27
+  1. 1.6.35
 
 In order to use it :
 
@@ -17,7 +17,7 @@ In order to use it :
 module  add libpng/1.6.27
 ```
 
-# Dependencies
+## Dependencies
 
 The dependency graph can be seen at https://ci.sagrid.ac.za/job/libpng-deploy/depgraph-view/
 
@@ -25,7 +25,7 @@ This project depends on :
 
   * [zlib-deploy](https://ci.sagrid.ac.za/job/zlib-deploy)
 
-# Configuration
+## Configuration
 
 The builds are configured with the following flags :
 
@@ -35,7 +35,7 @@ The builds are configured with the following flags :
 --prefix=${SOFT_DIR}
 ```
 
-# Citing
+## Citing
 
 Cite as :
 
